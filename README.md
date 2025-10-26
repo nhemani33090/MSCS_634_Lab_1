@@ -47,17 +47,37 @@ A comprehensive preprocessing workflow was applied to ensure data quality and co
 ---
 
 ## Statistical Analysis
-Comprehensive statistical analysis was performed on the cleaned and scaled dataset:
+Comprehensive statistical analysis was performed on the **cleaned and unscaled dataset (`df_no_out`)** to ensure results accurately reflected real-world sales magnitudes rather than normalized values.
 
-- **General Overview:** `.info()` and `.describe()` confirmed all columns are properly typed and summarized distribution metrics.  
-- **Central Tendency:** Calculated mean, median, and mode of `SALES`, showing balanced spread after scaling.  
-- **Dispersion:** Range, IQR, variance, and standard deviation were computed (IQR ≈ 0.29; Std. Dev ≈ 0.21), confirming moderate data variability.  
+- **General Overview:**  
+  The dataset contained **2,742 records** after cleaning, with all columns.  
+  The `.info()` and `.describe()` outputs confirmed realistic ranges for sales metrics, product pricing, and order details.  
+
+- **Central Tendency:**  
+  - **Minimum:** 482.13  
+  - **Maximum:** 7,962.24  
+  - **Mean:** 3,387.92  
+  - **Median:** 3,141.58  
+  - **Mode:** 3,003.00  
+  These values show a slightly right-skewed sales distribution where most orders fall in the mid-range, but a few high-value orders increase the average.
+
+- **Dispersion:**  
+  - **Range:** 7,480.11  
+  - **Q1:** 2,173.80  
+  - **Q3:** 4,351.21  
+  - **IQR:** 2,177.41  
+  - **Variance:** 2,486,032.67  
+  - **Standard Deviation:** 1,576.72  
+  The wide range and moderate deviation indicate diverse order sizes, typical of mixed-category retail data.
+
 - **Correlation Analysis:**  
-  - `PRICEEACH` and `SALES` exhibited a strong positive correlation (≈ 0.69).  
-  - `QUANTITYORDERED` also correlated positively with `SALES` (≈ 0.51).  
-  - These findings align with real-world business logic where both price and quantity influence total revenue.
+  The correlation matrix revealed several strong and meaningful relationships among numerical features:  
+  - **`PRICEEACH` ↔ `SALES`:** Strong positive correlation (≈ 0.70), showing that higher unit prices drive larger order totals.  
+  - **`QUANTITYORDERED` ↔ `SALES`:** Moderate positive correlation (≈ 0.52), indicating total sales increase with higher quantities.  
+  - **`MSRP` ↔ `SALES`:** Noticeable positive correlation (≈ 0.63), suggesting product value contributes to overall revenue.  
+  - Time-based attributes (`QTR_ID`, `MONTH_ID`, `YEAR_ID`) exhibited minimal correlation with sales, implying limited seasonal variance.  
 
-All results, including correlation matrices, were visualized and exported as screenshots.
+All analytical outputs — including `.info()`, `.describe()`, descriptive metrics, and correlation heatmaps — were saved in the `/screenshots/` directory for documentation.
 
 ---
 
