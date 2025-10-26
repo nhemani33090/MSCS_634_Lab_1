@@ -143,13 +143,6 @@ Restart Jupyter afterward, and log in with your new password.
   ```bash
   chmod +x run_jupyter.sh
   ```
-- If line endings cause errors in WSL:  
-  ```bash
-  sed -i 's/
-$//' run_jupyter.sh
-  ```
-
----
 
 ## Conclusion
 This lab successfully demonstrates the end-to-end process of preparing and analyzing real-world sales data. From visualization and cleaning to statistical analysis and correlation study, every step follows best practices in data analytics. The findings align with expected business relationships and validate the dataset’s integrity, making it a strong foundation for further exploration or modeling.
