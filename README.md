@@ -29,7 +29,7 @@ All visualizations were generated using Matplotlib and automatically saved to th
 A comprehensive preprocessing workflow was applied to ensure data quality and consistency:
 
 1. **Handling Missing Values:**  
-   - Missing entries in fields like `STATE`, `POSTALCODE`, and `TERRITORY` were detected and filled using mean (for numeric columns) or mode (for categorical columns).  
+   - Missing entries in fields like `STATE`, `POSTALCODE`, and `TERRITORY`were handled by removing rows with null values to maintain data consistency.  
    - After cleaning, all columns contained zero missing values.
 
 2. **Outlier Detection and Removal:**  
